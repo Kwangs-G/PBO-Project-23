@@ -4,6 +4,7 @@ public class Menu {
     private String bahan;
     private String pathGambar;
     private String kategori;
+    // ooooo
 
     public Menu(String nama, double harga, String bahan, String pathGambar, String kategori) {
         this.nama = nama;
