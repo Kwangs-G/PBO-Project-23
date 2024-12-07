@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.awt.geom.RoundRectangle2D;
 
 public class HalamanJajan {
+    private Keranjang keranjang;
+
     public HalamanJajan() {
+        keranjang = new Keranjang();
         JFrame frame = new JFrame("Halaman Jajan");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(900, 700);
@@ -54,6 +57,20 @@ public class HalamanJajan {
         }
         titleLabel.setBounds(0, 20, frame.getWidth(), 40);
         headerPanel.add(titleLabel);
+
+        // Ikon Keranjang
+        JLabel cartLabel = new JLabel();
+        ImageIcon cartIcon = new ImageIcon("Images/icon/keranjang.png");
+        cartLabel.setIcon(new ImageIcon(cartIcon.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
+        headerPanel.add(cartLabel);
+
+        // Menambahkan ActionListener pada Logo Keranjang
+        cartLabel.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
+                new HalamanKeranjang(keranjang);
+            }
+        });
+
 
         // Panel Konten (Panel yang dapat digulir horizontal)
         JPanel contentPanel = new JPanel(){
@@ -158,20 +175,14 @@ public class HalamanJajan {
             addButton.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 5));
             addButton.setBorderPainted(false);
             addButton.setContentAreaFilled(false);
-            addButton.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                    JOptionPane.showMessageDialog(frame, "belum ada halaman keranjang buat sekarang!");
-                }
+            addButton.addActionListener(e -> {
+                keranjang.addItem(jajan); // Menambahkan item ke keranjang
+                JOptionPane.showMessageDialog(frame, "Item berhasil ditambahkan ke keranjang!");
             });
             bottomPanel.add(addButton, BorderLayout.EAST);
-
-            // Tambahkan bottomPanel ke makananPanel
             jajanPanel.add(bottomPanel, BorderLayout.SOUTH);
 
-            // Tambahkan makananPanel ke contentPanel
             contentPanel.add(jajanPanel);
-
         }
 
         // Membungkus contentPanel dalam JScrollPane dengan orientasi horizontal
@@ -200,9 +211,12 @@ public class HalamanJajan {
         frame.addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
+                int frameWidth = frame.getWidth();
+
                 // Menyesuaikan ukuran elemen-elemen dalam frame
                 headerPanel.setPreferredSize(new Dimension(frame.getWidth(), 80));
                 titleLabel.setBounds(0, 20, frame.getWidth(), 40);
+                cartLabel.setBounds(frameWidth - 80, 20, 30, 30);
                 scrollPane.setBounds(0, 80, frame.getWidth(), frame.getHeight());
 
                 // Menyesuaikan gambar dan ukuran elemen lainnya jika perlu
