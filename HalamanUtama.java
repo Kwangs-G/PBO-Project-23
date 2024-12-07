@@ -8,11 +8,11 @@ import java.io.File;
 import java.io.IOException;
 
 public class HalamanUtama {
-    public static void main(String[] args) {
+    public HalamanUtama() {
         // Membuat frame utama
         JFrame frame = new JFrame("SiPeMa - Sistem Pemesanan Makanan");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600,700);
+        frame.setSize(900,700);
         frame.setLayout(null);
 
         // Layered Pane untuk mengatur layer
@@ -81,21 +81,25 @@ public class HalamanUtama {
         makananButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Tombol Makanan Diklik!");
+                new HalamanMakanan();
+                frame.dispose();
             }
         });
+        
 
         minumanButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Tombol Minuman Diklik!");
+                new HalamanMinuman();
+                frame.dispose();
             }
         });
 
         jajanButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "Tombol Jajan/Ngemil Diklik!");
+                new HalamanJajan();
+                frame.dispose();
             }
         });
 
@@ -143,7 +147,7 @@ public class HalamanUtama {
                 }
             }
         });
-
+        
         // Set visibilitas frame
         frame.setVisible(true);
     }
@@ -176,5 +180,12 @@ public class HalamanUtama {
         button.setContentAreaFilled(false);
         button.setFocusPainted(false);
         return button;
+    }
+
+    public static void main(String[] args) {
+        // Memanggil halaman utama
+        new HalamanUtama();
+
+        
     }
 }
