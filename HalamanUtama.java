@@ -106,7 +106,8 @@ public class HalamanUtama {
         // Menambahkan ActionListener pada Logo Keranjang
         cartLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                JOptionPane.showMessageDialog(frame, "Keranjang Diklik!");
+                new HalamanKeranjang();
+                frame.dispose();
             }
         });
 

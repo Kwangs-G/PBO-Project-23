@@ -161,7 +161,7 @@ public class HalamanMakanan {
             addButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    JOptionPane.showMessageDialog(frame, "belum ada halaman keranjang buat sekarang!");
+                    HalamanKeranjang.tambahKeKeranjang(makanan);
                 }
             });
             bottomPanel.add(addButton, BorderLayout.EAST);

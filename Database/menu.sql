@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Des 2024 pada 13.09
+-- Waktu pembuatan: 14 Des 2024 pada 09.56
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -44,7 +44,7 @@ INSERT INTO `jajan` (`id`, `nama`, `deskripsi`, `harga`, `gambar_path`) VALUES
 (2, 'Moci', 'Moci dengan isian kacang merah dan taburan kelapa.', 20000, 'Images/jajan/Jajan 2.jpg'),
 (3, 'Cookies Oreo', 'Cookies dengan campuran oreo yang renyah.', 25000, 'Images/jajan/Jajan 3.jpeg'),
 (4, 'Sosis Bakar', 'Sosis bakar dengan bumbu kecap manis dan pedas.', 18000, 'Images/jajan/Jajan 4.jpg'),
-(5, 'Sosis Non-Bakar', 'Sosis yang dimasak dengan cara digoreng, disajikan dengan saus sambal.', 16000, 'Images/jajan/Jajan 1.jpg');
+(5, 'Kue Putu', 'Jajanan tradisional dari parutan kelapa yang cocok untuk menemani santai', 9000, 'Images/jajan/Jajan 5.jpg');
 
 -- --------------------------------------------------------
 
@@ -69,7 +69,7 @@ INSERT INTO `makanan` (`id`, `nama`, `deskripsi`, `harga`, `gambar_path`) VALUES
 (2, 'Mie Ayam', 'Mie dengan potongan ayam dan saos khas.', 20000, 'Images/makanan/Makanan 2.jpeg'),
 (3, 'Sate Ayam', 'Sate ayam dengan bumbu kacang.', 30000, 'Images/makanan/Makanan 3.jpeg'),
 (4, 'Rendang', 'Daging sapi dimasak dengan bumbu khas Minang.', 45000, 'Images/makanan/Makanan 4.jpeg'),
-(5, 'Bakso', 'Bakso sapi dengan kuah gurih.', 15000, 'Images/makanan/Makanan 1.jpeg');
+(5, 'Rendang', 'Makanan khas padang dengan rempah yang menggugah selera makan.', 45300, 'Images/makanan/Makanan 5.jpeg');
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,11 @@ INSERT INTO `minuman` (`id`, `nama`, `deskripsi`, `harga`, `gambar_path`) VALUES
 (2, 'Es Teh Lemon', 'Es teh dengan tambahan lemon segar.', 15000, 'Images/minuman/Minuman 2.jpeg'),
 (3, 'Pop Ice', 'Minuman es serut dengan sirup rasa buah yang segar.', 18000, 'Images/minuman/Minuman 3.jpeg'),
 (4, 'Americano', 'Kopi hitam tanpa susu yang kuat dan pekat.', 25000, 'Images/minuman/Minuman 4.jpg'),
-(5, 'Jus Jeruk', 'Jus jeruk segar yang menyegarkan.', 17000, 'Images/minuman/Minuman 1.png');
+(5, 'Jus Jambu', 'Segelas jus jambu yang segar dengan rasa manis alami, kaya akan vitamin C dan cocok untuk menyegarkan tubuh.', 15500, 'Images/minuman/Minuman 5.jpeg'),
+(6, 'Air Mineral', 'Air mineral murni yang menyegarkan dan membantu menjaga tubuh tetap terhidrasi sepanjang hari.', 5200, 'Images/minuman/Minuman 6.jpg'),
+(7, 'Coklat Panas', 'Minuman coklat panas yang kaya rasa, sempurna untuk menghangatkan tubuh di cuaca dingin.', 20500, 'Images/minuman/Minuman 7.jpeg'),
+(8, 'Susu Segar', 'Susu segar dengan rasa lembut dan creamy, mengandung nutrisi yang baik untuk tubuh.', 18000, 'Images/minuman/Minuman 8.jpeg'),
+(9, 'Sprite', 'Minuman soda rasa lemon-lime yang menyegarkan dengan gelembung yang menyenangkan.', 12000, 'Images/minuman/Minuman 9.jpeg');
 
 --
 -- Indexes for dumped tables
@@ -138,7 +142,7 @@ ALTER TABLE `makanan`
 -- AUTO_INCREMENT untuk tabel `minuman`
 --
 ALTER TABLE `minuman`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
